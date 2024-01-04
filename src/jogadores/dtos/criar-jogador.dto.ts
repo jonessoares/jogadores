@@ -1,5 +1,10 @@
-export class CriarJogadorDto{ //ha menos atr. passado q a interface Jogador
-    readonly celular: String;
-    readonly email: String;
+import { IsNotEmpty, IsEmail } from 'class-validator';
+
+export class CriarJogadorDto{ 
+    @IsNotEmpty()
     readonly nome: String;
+    @IsEmail()
+    readonly email: String;
+    @IsNotEmpty()
+    readonly celular: String;
 }
